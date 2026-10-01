@@ -121,6 +121,24 @@
     .section-tag { margin: 5px 0 0; color: var(--coral); font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
     .manifesto h2 { max-width: 720px; margin: 0; font: 500 clamp(27px, 3.3vw, 42px)/1.2 var(--display); }
     .manifesto h2 span { color: var(--lime); }
+    .founder {
+      display: grid; grid-template-columns: .9fr 1.1fr; align-items: center;
+      gap: 56px; padding: 70px 0; border-bottom: 1px solid var(--line);
+    }
+    .founder-photo {
+      min-height: 330px; display: grid; place-items: center; position: relative;
+      overflow: hidden; border: 1px solid var(--line); background: #19332c;
+      color: var(--muted); font-size: 13px;
+    }
+    .founder-photo::before, .founder-photo::after {
+      content: ""; position: absolute; width: 220px; height: 220px;
+      border: 1px solid rgba(213,251,102,.22); border-radius: 50%;
+    }
+    .founder-photo::after { width: 150px; height: 150px; border-color: rgba(255,128,103,.38); }
+    .founder-photo span { z-index: 1; padding: 8px 11px; background: var(--ink); }
+    .founder-copy .section-tag { margin: 0 0 18px; }
+    .founder-copy h2 { margin: 0 0 12px; font: 500 clamp(32px, 4vw, 48px)/1.1 var(--display); }
+    .founder-copy p:last-child { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
     .closing { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 33px 0; }
     .closing p { margin: 0; color: var(--muted); font-size: 14px; }
     footer { border-top: 1px solid var(--line); color: #83978e; font-size: 12px; }
@@ -141,6 +159,8 @@
       .orbit-label.two { bottom: 25px; left: 0; }
       .orbit-label.three { bottom: 8px; right: 0; }
       .manifesto { grid-template-columns: 1fr; gap: 16px; padding: 34px 0 40px; }
+      .founder { grid-template-columns: 1fr; gap: 28px; padding: 42px 0; }
+      .founder-photo { min-height: 290px; }
       .closing { align-items: flex-start; flex-direction: column; padding: 27px 0; }
     }
     @media (max-width: 420px) {
@@ -162,7 +182,7 @@
       <span class="brand-mark" aria-hidden="true">f</span>
       <span class="brand-name">focus<span>path</span></span>
     </a>
-    <a class="nav-link" href="#hakkinda">Hakkında</a>
+    <a class="nav-link" href="#kurucu">Hakkımızda</a>
   </header>
 
   <main id="top" class="shell">
@@ -199,6 +219,17 @@
     <section class="manifesto" id="hakkinda" aria-labelledby="about-title">
       <p class="section-tag">Kendine dön</p>
       <h2 id="about-title">Büyük işler, dikkatinle verdiğin <span>küçük bir karar</span> ile başlar.</h2>
+    </section>
+
+    <section class="founder" id="kurucu" aria-labelledby="founder-name">
+      <div class="founder-photo" role="img" aria-label="Yiğit Efe Bay'in fotoğrafı için ayrılmış alan">
+        <span>Fotoğraf eklenecek</span>
+      </div>
+      <div class="founder-copy">
+        <p class="section-tag">Hakkımızda</p>
+        <h2 id="founder-name">Yiğit Efe Bay</h2>
+        <p>FocusPath: Odaklanma'nın kurucusu.</p>
+      </div>
     </section>
 
     <section class="closing" aria-label="FocusPath uygulaması">

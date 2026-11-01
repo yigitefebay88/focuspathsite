@@ -164,17 +164,33 @@
       width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%;
       background: rgba(213,251,102,.12); color: var(--lime); font: 700 12px var(--display);
     }
-    .founder {
-      display: grid; grid-template-columns: .9fr 1.1fr; align-items: center;
-      gap: 56px; padding: 70px 0; border-bottom: 1px solid var(--line);
+    .contributors {
+      padding: 70px 0; border-bottom: 1px solid var(--line);
     }
-    .founder-photo {
+    .contributors-header { margin-bottom: 30px; }
+    .contributors-header h2 {
+      margin: 0; font: 500 clamp(32px, 4vw, 48px)/1.1 var(--display);
+    }
+    .contributors-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px;
+    }
+    .contributor-card {
+      min-width: 0; border: 1px solid var(--line); background: rgba(255,255,255,.015);
+      border-radius: 16px; overflow: hidden;
+    }
+    .contributor-photo,
+    .contributor-placeholder {
       display: block; width: 100%; aspect-ratio: 1; object-fit: cover;
       border: 1px solid var(--line);
     }
-    .founder-copy .section-tag { margin: 0 0 18px; }
-    .founder-copy h2 { margin: 0 0 12px; font: 500 clamp(32px, 4vw, 48px)/1.1 var(--display); }
-    .founder-copy p:last-child { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .contributor-placeholder {
+      display: grid; place-items: center; padding: 28px; text-align: center;
+      color: var(--muted); background: rgba(213,251,102,.05);
+      border-style: dashed; font-size: 14px; line-height: 1.6;
+    }
+    .contributor-copy { padding: 22px; }
+    .contributor-copy h3 { margin: 0 0 10px; font: 500 26px/1.1 var(--display); }
+    .contributor-copy p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
     .closing { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 33px 0; }
     .closing p { margin: 0; color: var(--muted); font-size: 14px; }
     footer { border-top: 1px solid var(--line); color: #83978e; font-size: 12px; }
@@ -198,8 +214,9 @@
       .reviews { padding-top: 46px; }
       .reviews-header { align-items: flex-start; flex-direction: column; }
       .review-grid { grid-template-columns: 1fr; }
-      .founder { grid-template-columns: 1fr; gap: 28px; padding: 42px 0; }
-      .founder-photo { min-height: 290px; }
+      .contributors { padding: 42px 0; }
+      .contributors-grid { grid-template-columns: 1fr; }
+      .contributor-photo, .contributor-placeholder { min-height: 290px; }
       .closing { align-items: flex-start; flex-direction: column; padding: 27px 0; }
     }
     @media (max-width: 420px) {
@@ -221,7 +238,7 @@
       <span class="brand-mark" aria-hidden="true">f</span>
       <span class="brand-name">focus<span>path</span></span>
     </a>
-    <a class="nav-link" href="#kurucu">Hakkımızda</a>
+    <a class="nav-link" href="#emegi-gecenler">Emeği geçenler</a>
   </header>
 
   <main id="top" class="shell">
@@ -307,12 +324,28 @@
       </div>
     </section>
 
-    <section class="founder" id="kurucu" aria-labelledby="founder-name">
-      <img class="founder-photo" src="yigit-efe-bay.png" alt="FocusPath kurucusu Yiğit Efe Bay">
-      <div class="founder-copy">
-        <p class="section-tag">Hakkımızda</p>
-        <h2 id="founder-name">Yiğit Efe Bay</h2>
-        <p>Yiğit Efe Bay, FocusPath'i basit ama güçlü bir fikirle hayata geçirdi: odağını bulduğunda, kendi yolunu da çizebilirsin. FocusPath ile herkesin kendi ritminde ilerlemesine, zihnindeki kalabalığı geride bırakıp bir sonraki adımına güvenle yönelmesine eşlik ediyor.</p>
+    <section class="contributors" id="emegi-gecenler" aria-labelledby="contributors-title">
+      <div class="contributors-header">
+        <p class="section-tag">Emeği geçenler</p>
+        <h2 id="contributors-title">Bu yolculuğa katkı verenler</h2>
+      </div>
+
+      <div class="contributors-grid">
+        <article class="contributor-card">
+          <img class="contributor-photo" src="yigit-efe-bay.png" alt="FocusPath kurucusu Yiğit Efe Bay">
+          <div class="contributor-copy">
+            <h3>Yiğit Efe Bay</h3>
+            <p>FocusPath'i basit ama güçlü bir fikirle hayata geçirdi: odağını bulduğunda, kendi yolunu da çizebilirsin.</p>
+          </div>
+        </article>
+
+        <article class="contributor-card">
+          <img class="contributor-photo" src="WhatsApp Image 2026-11-01 at 17.15.54.jpeg" alt="Netora kurucusu Ahmet Egehan Buğday">
+          <div class="contributor-copy">
+            <h3>Ahmet Egehan Buğday</h3>
+            <p>Netora kurucusu ve FocusPath uygulamasını hayata veren genç yazılımcı.</p>
+          </div>
+        </article>
       </div>
     </section>
 
